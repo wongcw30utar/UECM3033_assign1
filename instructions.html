@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="generator" content="ReText 5.2.1">
+<title>instructions</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  extensions: ["MathMenu.js", "MathZoom.js"],
+  TeX: {
+    equationNumbers: {autoNumber: "AMS"}
+  }
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script></head>
+<body>
+<h1>UECM3033 Numerical Methods (Assignment #1)</h1>
+<hr>
+<p>DEADLINES:</p>
+<ul>
+<li>This assignment will contribute to 5 marks of the coursework.</li>
+<li>Assignment submission: 29/1/2016 (Friday) by 12:00 noon.</li>
+<li>Peer Reviews: 5/2/2016 (Friday) by 12:00 noon.</li>
+</ul>
+<p><strong>All deadlines are final and no extensions are allowed.</strong> Delay in submission of the assigments will delays the peer review process. Thus a penalty of 1 mark per day will be imposed for one day late in submission of assignment. Each student will need to review two peers. No mark will be awarded if a student failed to review the two peers.</p>
+<p>You could always edit and change your submission as many time as you like. However, you are not suppose to change your submission when the peer reviews starts. Your reviewers will be asked to check the last modified dates of your files. If the dates is beyond the stipulated due dates, you will be considered as late submission and same penalty will be applied.</p>
+<hr>
+<p>There are a total of 3 tasks for this assignments:</p>
+<ul>
+<li>setup a github repository</li>
+<li>setup Python</li>
+<li>modify and run a given Python script.</li>
+</ul>
+<h2>Task 1 -- setup a github repository</h2>
+<p>Version control is a system that tracks changes of files and source codes so that you could recover or recall a specific version in the future. It is especially important if sharing and editing files across a team.</p>
+<p>Git is a popular opensource version control system that is widely used by developers. Many of opensource software is managed by git version control. (<a href="https://en.wikipedia.org/?title=Git_(software)">Git at Wikipedia.</a>)</p>
+<p>One of the useful features of git is that all files could be stored in the local repositories in your computer. Git is a command line based software, and thus there will be a bit of learning curve to overcome. On the other hand the installation of git is straight forward. Just point your browser to <a href="http://git-scm.com/download/">http://git-scm.com/download/</a> and  download Git Bash for your operating system. Depending on your operating system, the procedure to install git will be a bit different, please consult the documentation. (If you are using Linux, usually git is already installed.)</p>
+<p>The following is a screen shot of Git Bash session. Several basic folder navigation commands are as below: </p>
+<p><img alt="fig/gitbash.png" src="fig/gitbash.png"></p>
+<ul>
+<li><em>pwd</em> - print current working directory.</li>
+<li><em>mkdir</em> - make directory</li>
+<li><em>cd</em> - change directory</li>
+<li><em>ls</em> - list the content of current directory</li>
+<li><em>exit</em> - exit Git Bash</li>
+</ul>
+<p>To begin using git we navigate into the folder we would like to use as local repository, say <em>assign1</em>. Then, we can initialize the repository by</p>
+<pre><code class="sh">$ git init
+</code></pre>
+
+<p>Once the repository is created, user could create or modify files in the repository. When a certain milestone is reach and the user decide all the changes made should be updated in the repository, then the user should <em>commit</em> the changes in the repository. Each commit to git repository will be tagged with the username of the person who made the commit and a commit message that give an indication of what were changed. Hence, we will need to configure git first before we can make any commit.</p>
+<pre><code>$ git config --global user.name &quot;Your Name Here&quot;
+$ git config --global user.email &quot;your_email@1utar.edu.my&quot;
+</code></pre>
+
+<p>You will only need to do this once in your computer. Of course you could reconfigure git again when you wish to change your details. You can also check the configuration for git by the following command:</p>
+<pre><code>$ git config --list
+</code></pre>
+
+<p>It won't be too useful If git is only to store files locally. Usually we would like sync the local repositories with the cloud based git server for backup or sharing purposes. Github is a web-based hosting service that provide git version control. User is allowed to "<em>push</em>" or "<em>pull</em>" their local repositories to and from remote repositories.</p>
+<p>First thing first, let sign up a Github account.</p>
+<ul>
+<li>Go to Github homepage <a href="https://github.com/join">https://github.com/join</a>. </li>
+<li>Enter a username, email and password and click "Sign up for Github".</li>
+<li>On the next screen, select the <strong>free plan</strong> and click "Finish Sign Up".</li>
+</ul>
+<p>To complete <strong>Task 1</strong>:</p>
+<ul>
+<li>Login to your Github.</li>
+<li>While still stay logged in Github, go to <a href="https://github.com/yongkheng/UECM3033_assign1">https://github.com/yongkheng/UECM3033_assign1</a></li>
+<li>Click "fork" button at the top right hand corner. Now your Github will have a copy of the UECM3033_assign1 repository. Copy the URL.</li>
+<li>Go to the google form <a href="http://goo.gl/forms/vfTbe6w89K">http://goo.gl/forms/vfTbe6w89K</a>.</li>
+<li>Fill in your name, ID and the URL to your newly forked repository.</li>
+<li>Answer the question in the google form and submit.</li>
+</ul>
+<hr>
+<h2>Task 2 -- setup python</h2>
+<p>This part of the assignment consists of two parts:</p>
+<ol>
+<li>Install and take a screen capture of your Python.</li>
+<li>Save your screen shot onto Github repository.</li>
+</ol>
+<p>For the installation of Python, you are encouraged to download and install Anaconda, a completely free Python distribution from Continuum Analytic. </p>
+<ol>
+<li>Go to <a href="http://continuum.io/downloads">http://continuum.io/downloads</a></li>
+<li>Choose "Python 3.5" suitable to your operating system.</li>
+<li>Download and install.</li>
+<li>Start Spyder, the IDE (Integrated Development Environment) of Anaconda distribution of Python.</li>
+<li>At the Python shell, type the following command and take a screen capture of the entire Spyder IDE, and call it "<code>python.png</code>".</li>
+</ol>
+<pre><code>import sys
+sys.version
+import this
+</code></pre>
+
+<p>If you prefer other distribution of Python other than Anaconda, you could also take a screen capture of the Python of your choice with the 3 lines of code above. However, the version of the Python used, must be 3.1 and above.</p>
+<p>Next is to merge your file <code>python.png</code> with your Github repository.</p>
+<h5>1. Clone the repository</h5>
+<pre><code>$ git clone https://github.com/your_github_id/UECM3033_assign1
+</code></pre>
+
+<p>This will create a <em><code>UECM3033_assign1</code></em> folder. (Remember you can check your current directory with <em><code>''pwd```* and *```ls```*.) Change into the *</code>UECM3033_assign1`</em> folder.</p>
+<h5>2. Copy and replace your <code>python.png</code> into <em><code>UECM3033_assign1</code></em> folder.</h5>
+<h5>3. Commit changes and push to Github.</h5>
+<pre><code>$ git add -A
+$ git commit -m &quot;Added python.png&quot;
+$ git push
+</code></pre>
+
+<h5>4. Verify at Github website that "python.png" is added into the repo.</h5>
+<hr>
+<h2>Task 3 -- modify and run Python script</h2>
+<p>In the repository that you just cloned, there is a <code>pyexercise.py</code> file and a <code>report.md</code> file. The <code>pyexercise.py</code> is a Python script that you will need to modify according to the instruction below. While the markdown file <code>report.md</code> is the template for you to report your assignment.</p>
+<p>In <code>pyexercise.py</code>, there are 3 functions: <code>fun_1</code>, <code>my_integral</code> and <code>my_solution</code>. </p>
+<ol>
+<li>Open the file and edit <code>pyexercise.py</code> to calculate the hexadecimal representation of your student ID.</li>
+<li>Next, choose an definite integration that you think is interesting. The integration should not be simple polynomials or trigonometry functions that could be solved by hand. Even better if the integration has no simple close form solution.</li>
+<li>Modify <code>my_integral</code> such that it calculate the integration of your choice. The example shown in the original <code>pyexercise.py</code> is to evaluate <script type="math/tex; mode=display">\int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}.</script>
+(Unfortunately Github doesn't render math equation directly, to view the rendered equation open <code>README.html</code> in your local repo using a browser)
+These integrals will be used as testing cases in your assignment 3.</li>
+<li>Next, setup a system of 10 linear equations with unique solutions. </li>
+<li>Modify <code>my_solution</code> such that it calculate the solution of the system of linear equations that you setup. The example in the original file is solving 
+<script type="math/tex; mode=display">\begin{align*}
+3 x_0 +x_1 &= 9,\\
+x_0 + 2 x_1 &= 8.
+\end{align*}</script>
+</li>
+<li>Record all your findings into the <code>report.md</code> file. </li>
+<li>Upload into Github together with your modified python script</li>
+</ol>
+<p>You noticed that I have mentioned that to report your findings into <code>report.md</code> file. It is called a <strong>Markdown</strong> file. Markdown allows you to write using simple plain text format, which then Github can translates it into common webpage HTML. Markdown is especially useful for writing reports with codes, it save the hassle of formatting. More information on markdown language can be found here <a href="https://help.github.com/articles/markdown-basics/">https://help.github.com/articles/markdown-basics/</a>.</p>
+<p>The <code>report.md</code> file you downloaded can be edited using any text editor like the Windows default text editor, <code>notepad.exe</code>. Alternatively, there are <a href="http://markdownpad.com/">MarkdownPad</a>, <a href="http://pad.haroopress.com/user.html">Haroopad</a>, and my favour <a href="http://sourceforge.net/projects/retext/">ReText</a>. Try to open <code>report.md</code> using a text editor and modify the file. Upload into Github and you can see the corresponding changes  will appear in the preview page of <code>report.md</code>. </p>
+<p><strong>Note: As Github markdown doesn't render equations well, and if using markdown <code>report.md</code> is giving you problem, you could always opt to use microsoft word or other word processor to write your report and submit. Usage of markdown is optional, but encouraged.</strong> </p>
+<p>Remember that you could edit and change your <code>report.md</code> as many time as you like. However, you are not suppose to change anything when the peer reviews starts. Your reviewers will be asked to check the last modified dates of your files. If the dates is beyond the stipulated due dates, you will be considered as late submission and penalty will be applied.</p>
+<hr>
+<h2>Summary:</h2>
+<h3>Task 1:</h3>
+<ul>
+<li>install Git Bash</li>
+<li>create Github account</li>
+<li>fork UECM3033_assign1 repository</li>
+<li>submit URL of forked repository</li>
+</ul>
+<h3>Task 2:</h3>
+<ul>
+<li>install Python, capture screen shot</li>
+<li>clone UECM3033_assign1 repository</li>
+<li>pull repository</li>
+<li>submit screen shot "python.png" to Github</li>
+</ul>
+<h3>Task 3:</h3>
+<ul>
+<li>Edit and modify <code>pyexercise.py</code></li>
+<li>Edit and modify <code>report.md</code></li>
+<li>Submit <code>pyexercise.py</code> and <code>report.md</code> to Github.</li>
+</ul>
+<hr>
+<p><sup>last modified: 22 Dec 2015</sup></p>
+</body>
+</html>
